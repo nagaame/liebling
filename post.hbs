@@ -37,7 +37,7 @@ into the {body} of the default.hbs template --}}
       {{/if}}
     {{/if}}
   {{/post}}
-  
+
   <article>
     <div class="l-content in-post">
       {{!-- Everything inside the #post tags pulls data from the post --}}
@@ -179,6 +179,14 @@ into the {body} of the default.hbs template --}}
             </div>
           </section>
         --}}
+
+        <section class="m-comments">
+          <div class="m-load-comments__iframe l-wrapper in-comments js-comments-iframe">
+            <div class="giscus"></div>
+          </div>
+
+        </section>
+
       {{/post}}
       {{!-- Related posts --}}
       {{#if post.tags.length}}
