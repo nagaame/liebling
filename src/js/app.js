@@ -310,6 +310,18 @@ $(() => {
   shave('.js-article-card-title', 100);
   shave('.js-article-card-title-no-image', 250);
 
+  const DarkMode = () => {
+    let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (isDark) {
+      $('html').attr('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      $('html').attr('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
   tryToRemoveNewsletter();
   trySearchFeature();
+  DarkMode();
 });
